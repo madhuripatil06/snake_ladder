@@ -1,0 +1,22 @@
+{
+  "name": "snake_ladder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhuripatil06/snake_ladder.git"
+  },
+  "author": "madhuri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhuripatil06/snake_ladder/issues"
+  },
+  "homepage": "https://github.com/madhuripatil06/snake_ladder#readme"
+}
