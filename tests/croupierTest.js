@@ -45,6 +45,57 @@ describe('move the coin',function(){
 });
 
 
+describe('is safe',function(){
+	it('should give true if the given tile is safe',function(){
+		var tile = {location: { x: 9, y: 8 }, status: 'safe', destination: null};
+		assert.ok(croupier.isSafe(tile));
+	});
+	it('should give false if the given tile is snake tile',function(){
+		var tile = { location: { x: 1, y: 3 },status: 'snake',destination: { x: 0, y: 1 } };
+		assert.ok(!croupier.isSafe(tile));
+	});
+	it('should give false if the given tile is ladder tile',function(){
+		var tile =  { location: { x: 2, y: 7 },status: 'ladder',destination: { x: 6, y: 7 } };
+		assert.ok(!croupier.isSafe(tile));
+	});
+});
+
+
+describe('is snake',function(){
+	it('should give false if the given tile is safe',function(){
+		var tile = {location: { x: 9, y: 8 }, status: 'safe', destination: null};
+		assert.ok(!croupier.isSnake(tile));
+	});
+	it('should give true if the given tile is snake tile',function(){
+		var tile = { location: { x: 1, y: 3 },status: 'snake',destination: { x: 0, y: 1 } };
+		assert.ok(croupier.isSnake(tile));
+	});
+	it('should give false if the given tile is ladder tile',function(){
+		var tile =  { location: { x: 2, y: 7 },status: 'ladder',destination: { x: 6, y: 7 } };
+		assert.ok(!croupier.isSnake(tile));
+	});
+});
+
+
+describe('is ladder',function(){
+	it('should give false if the given tile is safe',function(){
+		var tile = {location: { x: 9, y: 8 }, status: 'safe', destination: null};
+		assert.ok(!croupier.isLadder(tile));
+	});
+	it('should give true if the given tile is snake tile',function(){
+		var tile = { location: { x: 1, y: 3 },status: 'snake',destination: { x: 0, y: 1 } };
+		assert.ok(!croupier.isLadder(tile));
+	});
+	it('should give false if the given tile is ladder tile',function(){
+		var tile =  { location: { x: 2, y: 7 },status: 'ladder',destination: { x: 6, y: 7 } };
+		assert.ok(croupier.isLadder(tile));
+	});
+});
+
+
+
+
+
 
 
 
