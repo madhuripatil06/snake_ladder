@@ -26,6 +26,24 @@ describe('generate tiles',function(){
 });
 
 
+describe('move the coin',function(){
+	it('the move coin should move the coin when y is less than 4',function(){
+		var currLocation = {x:2, y:3};
+		var location = croupier.moveCoin(currLocation,3);
+		var expectedLocation = {x:2,y:6};
+		expect(location.x).to.equal(expectedLocation.x);
+		expect(location.y).to.equal(expectedLocation.y);
+	});
+
+	it('the move coin should move the coin when y is greater than 4 and value is 6 ',function(){
+		var currLocation = {x:2, y:5};
+		var location = croupier.moveCoin(currLocation,6);
+		var expectedLocation = {x:3,y:1};
+		expect(location.x).to.equal(expectedLocation.x);
+		expect(location.y).to.equal(expectedLocation.y);
+	});
+});
+
 
 
 
